@@ -15,3 +15,8 @@ MonoBehaviour:
   isTalking: 0
   lostStart: 0
   lostBanner: 1
+  Break: 0
+  Start: 0
+  Gorilla: 0
+  Father: 0
+  Boss: 0

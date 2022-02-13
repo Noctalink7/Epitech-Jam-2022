@@ -7,7 +7,8 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class battle_system : MonoBehaviour
 {
-public GameObject playerPrefab;
+	public ChekList list;
+	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
 
 	public Transform playerBattleStation;
@@ -113,6 +114,7 @@ public GameObject playerPrefab;
 	{
 		if(state == BattleState.WON)
 		{
+			list.Boss = true;
 			dialogueText.text = "You won the battle!";
 		} else if (state == BattleState.LOST)
 		{

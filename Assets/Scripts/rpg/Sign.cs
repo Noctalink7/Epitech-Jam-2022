@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Sign : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Sign : MonoBehaviour
     public Text diagText;
     public string dialog;
     public bool inRange;
+    public bool isBad;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class Sign : MonoBehaviour
             {
                 diagBox.SetActive(false);
                 player.currentState = PlayerState.idle;
+                if (isBad)
+                    SceneManager.LoadScene("combat_turn");
             }
             else
             {

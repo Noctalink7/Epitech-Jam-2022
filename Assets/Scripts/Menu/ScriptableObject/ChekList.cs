@@ -14,4 +14,5 @@ public class ChekList : ScriptableObject
     public bool Start;
     public bool Gorilla;
     public bool Father;
+    public bool Boss;
 }

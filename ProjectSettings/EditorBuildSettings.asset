@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: add49d211bdf44b418634fa5abd34162
+  - enabled: 1
+    path: Assets/Scenes/Rpg.unity
+    guid: 3ff1ac90631e28943bd15271c0c82759
+  - enabled: 1
+    path: Assets/Scenes/combat_turn.unity
+    guid: dd8886a2d4092c94a911eb8169aff797
   m_configObjects: {}
