@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class Fall : MonoBehaviour
 {
-    public int nb;
+    private int nb;
     private Rigidbody2D rb;
-
-    void Update()
-    {
-    }
+    private bool isActive = false;
 
     private void Start()
     {
+        nb = 10;
         rb = GetComponent<Rigidbody2D>();
+        isActive = true;
     }
 
     private void OnMouseDown()
     {
-
-        nb -= 1;
-        StartCoroutine(Tremble());
-        if (nb <= 0)
-            rb.gravityScale = 1;
+        if (isActive)
+        {
+            nb -= 1;
+            StartCoroutine(Tremble());
+            if (nb <= 0)
+            {
+                rb.gravityScale = 1;
+            }
+        }
     }
 
     IEnumerator Tremble()
