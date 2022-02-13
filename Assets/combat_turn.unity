@@ -707,7 +707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100/100
+  m_Text: 
 --- !u!222 &367598832
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1337,6 +1337,7 @@ MonoBehaviour:
   nameText: {fileID: 1645158976}
   levelText: {fileID: 1863786028}
   hpSlider: {fileID: 1222438420}
+  nb_life: {fileID: 1363824279}
 --- !u!1 &997655380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100/100
+  m_Text: 
 --- !u!222 &1363824280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2108,7 +2109,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 45.7
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2495,6 +2496,7 @@ MonoBehaviour:
   nameText: {fileID: 189220321}
   levelText: {fileID: 610070191}
   hpSlider: {fileID: 1419506605}
+  nb_life: {fileID: 367598831}
 --- !u!1 &2032528862
 GameObject:
   m_ObjectHideFlags: 0

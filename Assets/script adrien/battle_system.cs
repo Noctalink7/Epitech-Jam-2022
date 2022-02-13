@@ -15,6 +15,8 @@ public GameObject playerPrefab;
 
 	enemy playerUnit;
 	enemy enemyUnit;
+//	public Animator animator_player;
+//	public Animator animator_enemy;
 
 	public Text dialogueText;
 
@@ -51,15 +53,22 @@ public GameObject playerPrefab;
 
 	IEnumerator PlayerAttack()
 	{
-		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+//		animator_player = playerUnit.GetComponentInChildren<Animator>;
+//		animator_enemy = enemyUnit.GetComponentInChildren<Animator>;
 
-		enemyHUD.SetHP(enemyUnit.currentHP);
+		bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+//		animator_player.SetTrigger("attack");
+//		animator_enemy.SetTrigger("hurt");
+
+		enemyHUD.SetHP(enemyUnit.currentHP, enemyUnit);
 		dialogueText.text = "The attack is successful!";
 
 		yield return new WaitForSeconds(2f);
 
 		if(isDead)
 		{
+//			animator_player.SetBool("win", true);
+//			animator_enemy.SetBool("dead", true);
 			state = BattleState.WON;
 			EndBattle();
 		} else
@@ -71,18 +80,25 @@ public GameObject playerPrefab;
 
 	IEnumerator EnemyTurn()
 	{
+//		animator_player = playerUnit.GetComponentInChildren<Animator>;
+//		animator_enemy = enemyUnit.GetComponentInChildren<Animator>;
+
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
 
 		bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+//		animator_player.SetTrigger("hurt");
+//		animator_enemy.SetTrigger("attack");
 
-		playerHUD.SetHP(playerUnit.currentHP);
+		playerHUD.SetHP(playerUnit.currentHP, playerUnit);
 
 		yield return new WaitForSeconds(1f);
 
 		if(isDead)
 		{
+//			animator_player.SetBool("win", false);
+//			animator_enemy.SetBool("dead", true);
 			state = BattleState.LOST;
 			EndBattle();
 		} else
@@ -111,9 +127,13 @@ public GameObject playerPrefab;
 
 	IEnumerator PlayerHeal()
 	{
+//		animator_player = playerUnit.GetComponentInChildren<Animator>;
+//		animator_enemy = enemyUnit.GetComponentInChildren<Animator>;
+
 		playerUnit.Heal(5);
 
-		playerHUD.SetHP(playerUnit.currentHP);
+//		animator_player.SetTrigger("heal");
+		playerHUD.SetHP(playerUnit.currentHP, playerUnit);
 		dialogueText.text = "You feel renewed strength!";
 
 		yield return new WaitForSeconds(2f);
