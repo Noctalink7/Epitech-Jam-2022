@@ -18,6 +18,7 @@ public class Achievments : MonoBehaviour
     {
         list.Break = false;
         list.Start = false;
+        list.Father = false;
     }
 
     // Update is called once per frame
@@ -36,6 +37,20 @@ public class Achievments : MonoBehaviour
             image.sprite = sprites[1];
             StartCoroutine(ActivateBox());
             list.Start = false;
+        }
+        if (list.Gorilla == true)
+        {
+            BoxText.text = text[2];
+            image.sprite = sprites[2];
+            StartCoroutine(ActivateBox());
+            list.Gorilla = false;
+        }
+        if (list.Father == true)
+        {
+            BoxText.text = text[3];
+            image.sprite = sprites[3];
+            StartCoroutine(ActivateBox());
+            list.Father = false;
         }
     }
 
